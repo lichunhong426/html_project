@@ -1,7 +1,5 @@
-.someDay-btn {
-    background: url(/images/Btn.PNG) no-repeat;
-    cursor: pointer;
-    width: 200px;
-    height: 100px;
+a {
+    padding: 0;
     border: none;
+    background: none;
 }
