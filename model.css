@@ -1,6 +1,7 @@
-.someDay-btn{
-    background-image: url(pic/somedayOfOneDay.jpeg);
-    color: white;
-    padding: 15px 25px;
-    text-decoration: none;
+.someDay-btn {
+    background: url(/images/Btn.PNG) no-repeat;
+    cursor: pointer;
+    width: 200px;
+    height: 100px;
+    border: none;
 }
