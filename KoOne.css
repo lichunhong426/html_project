@@ -1,4 +1,6 @@
-body { margin: 0px; font-family: Georgia; background-color: white;}
+body { 
+    margin: 0px; font-family: Georgia; background-color: #cccccc
+}
 
 
    
@@ -71,15 +73,7 @@ td{
 }
 
 
-.center-img,
-.center-txt {
-    display: inline-block;
-    vertical-align: middle;
-    font-size:25px;
-}
 
-#wrapper {
-    text-align: center;
-}
+
 
 
