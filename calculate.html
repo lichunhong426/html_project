@@ -1,32 +1,59 @@
 <html>
 <head>
+    <script type="text/javascript">
+        var temp = 0;
+        function update() {
+            var select = document.getElementById('dvd');
+            var option = select.options[select.selectedIndex];
+            var amount = document.getElementById('amount');
+
+            document.getElementById('cal').value = option.value * amount.value;
+        }
+
+        function sumUp(sum) {
+            var sumUp = parseInt(sum.value);
+
+            temp += sumUp;
+
+            document.getElementById('sum').value = temp;
+        }
+
+        function reload() {
+            location.reload();
+        }
+
+    </script>
 </head>
 <body>
 
     <div>
-        <form method="post" enctype="multipart/form-data" oninput="result.value = parseInt(dvd.value) * parseInt(amount.value)">
-            <input name="region" type="hidden" />
-            項目 :   &nbsp;&nbsp;
-            <select name="dvd" size="5" id="dvd">
-                <option value="199" id="ko">終極一班 (1-21集) DVD</option>
-                <option value="199" id="ko3_1">終極三國(01-25) DVD</option>
-                <option value="199" id="ko3_2">終極三國(26-53完) DVD</option>
-                <option value="600" selected="selected" id="someday">藍光BD高清電視劇 想見你(2019) 柯佳嬿 許光漢 施柏宇 國語中繁字幕 3碟盒裝 高清藍光BD</option>
-                <option value="849" id="teen">通靈少女 (3DVD)</option>
-            </select>
-            <br />
-            <br />
-            <br />
-            數量:  &nbsp;&nbsp;<input type="text" name="amount" id="amount" />
-            <br />
-            <br />
-            <br />
-            總計: &nbsp;&nbsp;<output name="result" for="ko ko3_1 ko3_2 someday teen amount">0</output>
-            <br />
-            <br />
-            <input type="submit" name="submit" />
-        </form>
+        項目 :   &nbsp;&nbsp;
+        <select name="dvd" size="5" id="dvd">
+            <option value="199" id="ko">終極一班 (1-21集) DVD</option>
+            <option value="199" id="ko3_1">終極三國(01-25) DVD</option>
+            <option value="199" id="ko3_2">終極三國(26-53完) DVD</option>
+            <option value="600" selected="selected" id="someday">藍光BD高清電視劇 想見你(2019) 柯佳嬿 許光漢 施柏宇 國語中繁字幕 3碟盒裝 高清藍光BD</option>
+            <option value="849" id="teen">通靈少女 (3DVD)</option>
+        </select>
+        <br />
+        <br />
+        <br />
+        數量:  &nbsp;&nbsp;<input type="text" name="amount" id="amount" />&nbsp;&nbsp;<input type="button" onclick="update();" value="+" />
+        <br />
+        <br />
 
+        <br />
+        初計: &nbsp;&nbsp;<input type="text" id="cal" disabled="disabled"> &nbsp;&nbsp;<input type="button" onclick="sumUp(cal);" value="Sum Up" />
+        <br />
+        <br />
+
+        <br />
+        總計: &nbsp;&nbsp;<input type="text" id="sum" disabled="disabled">
+        <br />
+        <br />
+        <input type="button" value="Reset" onclick="reload();"/>
+        <br />
+        <br />
         <a href="main.html">返回首頁</a>
     </div>
 </body>
